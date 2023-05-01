@@ -18,9 +18,13 @@ void main() {
   /* # 1.4 Final Variables 
   final name = 'illi'; // 수정 불가 */
 
-  /* # 1.5 Late Variables */
+  /* # 1.5 Late Variables
   late final String name;
   name = 'illi'; // 나중에 초기화
-  print(name);
+  print(name); */
+
+  /* # 1.6 Constant Variables */
+  const apiKey = 'abc';
+  print(apiKey);
 
 }
