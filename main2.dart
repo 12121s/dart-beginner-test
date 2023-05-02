@@ -30,7 +30,7 @@ void main() {
 
   print(intro); */
 
-  /* # 2.3 Collection for: 리스트 요소 반복문으로 추가하기 */
+  /* # 2.3 Collection for: 리스트 요소 반복문으로 추가하기
   var oldFriends = [
     'illi',
     'dada',
@@ -42,5 +42,24 @@ void main() {
     for (var friends in oldFriends) "$friends ❤️",
   ];
 
-  print(newFriends);
+  print(newFriends); */
+
+  /* # 2.4 Maps : python dictionary 타입과 동일 */
+  var player = {
+    'name': 'illi',
+    'age': 20,
+    'xp': 199.9,
+    'superpower': false,
+  };
+  List<Map<String, Object>> players = [
+    {
+      'name': 'dada',
+      'age': 29,
+      'xp': 19999.9,
+      'superpower': true,
+    },
+    player,
+  ];
+  // 단, 특정 모델 형태로 만든다면 Map 대신 Class 사용 권장
+  print(players);
 }
