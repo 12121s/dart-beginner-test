@@ -27,18 +27,36 @@ String capitalizeName(String name) {
   return 'anon';
 }
 String capitalizeName(String? name) =>
-    name != null ? name.toUpperCase() : 'anon'; */
-String capitalizeName(String? name) => name?.toUpperCase() ?? 'anon';
+    name != null ? name.toUpperCase() : 'anon';
+String capitalizeName(String? name) => name?.toUpperCase() ?? 'anon'; */
+
+/* # 3.5 Typedef */
+typedef ListOfInts = List<int>;
+
+ListOfInts reverseListOfNumbers(ListOfInts list) {
+  var reversed = list.reversed;
+  return reversed.toList();
+}
+
+typedef UserInfo = Map<String, String>;
+
+String sayHi(UserInfo userInfo) {
+  return "Hi ${userInfo['name']}";
+}
 
 void main() {
   // print(sayHello('illi', 20, 'cuba'));
   // print(sayHello(age: 20, country: 'cuba', name: 'illi'));
   // print(sayHello(name: 'dada')); // null safety
   // print(sayHello('illi', 20));
-  capitalizeName('illi');
-  capitalizeName(null);
+  // capitalizeName('illi');
+  // capitalizeName(null);
 
-  String? name;
-  name ??= 'illi';
-  print(name);
+  // String? name;
+  // name ??= 'illi';
+  // print(name);
+
+  print(reverseListOfNumbers([1, 2, 3]));
+  print(sayHi({"name": "illi"}));
+  print(sayHi({"abc": "illi"}));
 }
