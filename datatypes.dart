@@ -44,7 +44,7 @@ void main() {
 
   print(newFriends); */
 
-  /* # 2.4 Maps : python dictionary 타입과 동일 */
+  /* # 2.4 Maps : python dictionary 타입과 동일
   var player = {
     'name': 'illi',
     'age': 20,
@@ -61,5 +61,15 @@ void main() {
     player,
   ];
   // 단, 특정 모델 형태로 만든다면 Map 대신 Class 사용 권장
-  print(players);
+  print(players); */
+
+  /* # 2.5 Sets : List와 차이는 중복값 허용 x */
+  Set nums = {1, 2, 3, 4};
+  // var nums = {1,2,3,4,} -> set python의 tuble 타입과 동일
+  // var nums = [1,2,3,4,] -> list
+  nums.add(1);
+  nums.add(1);
+  nums.add(1);
+
+  print(nums);
 }
