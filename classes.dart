@@ -23,6 +23,19 @@ class Player {
       required this.xp,
       required this.team,
       required this.age});
+
+  /* # 4.3 Named Constructors */
+  Player.createBluePlayer({required String name, required int xp})
+      : this.name = name,
+        this.xp = xp,
+        this.team = 'blue',
+        this.age = 23;
+
+  Player.createRedPlayer({required String name, required int xp})
+      : this.name = name,
+        this.xp = xp,
+        this.team = 'red',
+        this.age = 78;
 }
 
 void main() {
@@ -32,4 +45,10 @@ void main() {
     team: "blue",
     age: 1,
   );
+
+  var bluePlayer = Player.createBluePlayer(name: 'illi', xp: 99);
+  bluePlayer.sayHello();
+
+  var redPlayer = Player.createBluePlayer(name: 'dada', xp: 999);
+  redPlayer.sayHello();
 }
