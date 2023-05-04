@@ -1,6 +1,15 @@
-/* # 4.7 Abstract Classes */
+/* # 4.7 Abstract Classes
 abstract class Human {
   void walk();
+} */
+
+/* # 4.8 Inheritance */
+class Human {
+  final String name;
+  Human({required this.name});
+  void walk() {
+    print("$name is walking");
+  }
 }
 
 /* # 4.6 Enums */
@@ -32,9 +41,16 @@ class Player extends Human {
       {required this.name,
       required this.xp,
       required this.team,
-      required this.age});
+      required this.age})
+      : super(name: name);
 
-  /* # 4.3 Named Constructors */
+  @override
+  void walk() {
+    super.walk();
+    print("and I'm play for $team");
+  }
+
+  /* # 4.3 Named Constructors
   Player.createBluePlayer({required String name, required XPLevel xp})
       : this.name = name,
         this.xp = xp,
@@ -52,12 +68,7 @@ class Player extends Human {
       : this.name = playerJson['name'],
         this.xp = playerJson['xp'],
         this.team = playerJson['team'],
-        this.age = 22;
-
-  @override
-  void walk() {
-    print('the player is walking');
-  }
+        this.age = 22; */
 }
 
 void main() {
@@ -90,5 +101,6 @@ void main() {
         ..name = 'ls'
         ..xp = XPLevel.medium
         ..team = Team.red
-        ..sayHello();
+        ..sayHello()
+        ..walk();
 }
