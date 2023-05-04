@@ -1,10 +1,15 @@
+/* # 4.7 Abstract Classes */
+abstract class Human {
+  void walk();
+}
+
 /* # 4.6 Enums */
 enum Team { red, blue }
 
 enum XPLevel { beginner, medium, pro }
 
 /* # 4.0 Your First Dart Class */
-class Player {
+class Player extends Human {
   late String name;
   late XPLevel xp = XPLevel.pro;
   Team team;
@@ -48,6 +53,11 @@ class Player {
         this.xp = playerJson['xp'],
         this.team = playerJson['team'],
         this.age = 22;
+
+  @override
+  void walk() {
+    print('the player is walking');
+  }
 }
 
 void main() {
