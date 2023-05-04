@@ -12,13 +12,24 @@ class Human {
   }
 }
 
+/* # 4.9 Mixins */
+class Strong {
+  final double strenghtLevel = 2382.99;
+}
+
+class QuickRunner {
+  void runQuick() {
+    print("ruuuuunnn!!!");
+  }
+}
+
 /* # 4.6 Enums */
 enum Team { red, blue }
 
 enum XPLevel { beginner, medium, pro }
 
 /* # 4.0 Your First Dart Class */
-class Player extends Human {
+class Player extends Human with Strong, QuickRunner {
   late String name;
   late XPLevel xp = XPLevel.pro;
   Team team;
