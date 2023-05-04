@@ -36,10 +36,17 @@ class Player {
         this.xp = xp,
         this.team = 'red',
         this.age = 78;
+
+  /* # 4.4 recap */
+  Player.fromJson(Map<String, dynamic> playerJson)
+      : this.name = playerJson['name'],
+        this.xp = playerJson['xp'],
+        this.team = playerJson['team'],
+        this.age = 22;
 }
 
 void main() {
-  var illi = Player(
+  /* var illi = Player(
     name: "illi",
     xp: 100,
     team: "blue",
@@ -50,5 +57,14 @@ void main() {
   bluePlayer.sayHello();
 
   var redPlayer = Player.createBluePlayer(name: 'dada', xp: 999);
-  redPlayer.sayHello();
+  redPlayer.sayHello(); */
+  var apiData = [
+    {"name": "illi", "team": "red", "xp": 0},
+    {"name": "dada", "team": "blue", "xp": 0},
+    {"name": "kaily", "team": "red", "xp": 0},
+  ];
+  apiData.forEach((element) {
+    var player = Player.fromJson(element);
+    player.sayHello();
+  });
 }
