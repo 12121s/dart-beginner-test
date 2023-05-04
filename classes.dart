@@ -1,6 +1,6 @@
 /* # 4.0 Your First Dart Class */
 class Player {
-  late final String name;
+  late String name;
   late int xp = 999;
   String team;
   int age;
@@ -57,7 +57,8 @@ void main() {
   bluePlayer.sayHello();
 
   var redPlayer = Player.createBluePlayer(name: 'dada', xp: 999);
-  redPlayer.sayHello(); */
+  redPlayer.sayHello();
+
   var apiData = [
     {"name": "illi", "team": "red", "xp": 0},
     {"name": "dada", "team": "blue", "xp": 0},
@@ -66,5 +67,12 @@ void main() {
   apiData.forEach((element) {
     var player = Player.fromJson(element);
     player.sayHello();
-  });
+  }); */
+
+  /* # 4.5 Cascade Notation */
+  var illi = Player(name: 'name', xp: 12, team: 'blue', age: 23)
+    ..name = 'ls'
+    ..xp = 23
+    ..team = 'red'
+    ..sayHello();
 }
