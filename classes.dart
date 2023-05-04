@@ -1,8 +1,13 @@
+/* # 4.6 Enums */
+enum Team { red, blue }
+
+enum XPLevel { beginner, medium, pro }
+
 /* # 4.0 Your First Dart Class */
 class Player {
   late String name;
-  late int xp = 999;
-  String team;
+  late XPLevel xp = XPLevel.pro;
+  Team team;
   int age;
 
   /* # 4.1 Constructors */
@@ -25,16 +30,16 @@ class Player {
       required this.age});
 
   /* # 4.3 Named Constructors */
-  Player.createBluePlayer({required String name, required int xp})
+  Player.createBluePlayer({required String name, required XPLevel xp})
       : this.name = name,
         this.xp = xp,
-        this.team = 'blue',
+        this.team = Team.blue,
         this.age = 23;
 
-  Player.createRedPlayer({required String name, required int xp})
+  Player.createRedPlayer({required String name, required XPLevel xp})
       : this.name = name,
         this.xp = xp,
-        this.team = 'red',
+        this.team = Team.red,
         this.age = 78;
 
   /* # 4.4 recap */
@@ -70,9 +75,10 @@ void main() {
   }); */
 
   /* # 4.5 Cascade Notation */
-  var illi = Player(name: 'name', xp: 12, team: 'blue', age: 23)
-    ..name = 'ls'
-    ..xp = 23
-    ..team = 'red'
-    ..sayHello();
+  var illi =
+      Player(name: 'name', xp: XPLevel.beginner, team: Team.blue, age: 23)
+        ..name = 'ls'
+        ..xp = XPLevel.medium
+        ..team = Team.red
+        ..sayHello();
 }
